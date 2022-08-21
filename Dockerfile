@@ -6,7 +6,7 @@ COPY src /build/src/
 WORKDIR /build/
 RUN mvn -DskipTests=true package
 
-FROM arm64v8/openjdk:17-ea-9-jdk
+FROM openjdk:17-alpine
 
 WORKDIR /app
 
