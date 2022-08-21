@@ -1,4 +1,4 @@
-FROM maven:3.8.3-openjdk-17  AS MAVEN_BUILD
+FROM arm64v8/maven:3.8.6-openjdk-18  AS MAVEN_BUILD
 
 COPY pom.xml /build/
 COPY src /build/src/
@@ -6,7 +6,7 @@ COPY src /build/src/
 WORKDIR /build/
 RUN mvn -DskipTests=true package
 
-FROM openjdk:17-alpine
+FROM arm64v8/openjdk:17-ea-16-jdk
 
 WORKDIR /app
 
