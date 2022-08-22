@@ -14,6 +14,6 @@ public class ProductsController {
 
     @GetMapping("/")
     public List<String> getAll(){
-        return Arrays.asList("uno","dos","tres");
+        return Arrays.asList("uno","dos","tres","cuatro");
     }
 }
