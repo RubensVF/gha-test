@@ -4,7 +4,7 @@ COPY pom.xml /build/
 COPY src /build/src/
 
 WORKDIR /build/
-RUN mvn -DskipTests=true package
+RUN --mount=type=cache,target=/root/.m2 mvn -DskipTests=true package
 
 FROM arm64v8/openjdk:17-ea-16-jdk
 
