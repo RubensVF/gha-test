@@ -1,10 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage("Test") {
+        stage("Build") {
             steps {
-                sh 'ls'
-                sh 'docker ps'
+                sh 'docker build -t ecommerce-api .'
             }
         }
     }
