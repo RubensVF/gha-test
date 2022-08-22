@@ -10,8 +10,7 @@ pipeline {
 
         stage("SetUp"){
             steps{
-                sh 'docker stop api'
-                sh 'docker rm api'
+                sh 'docker stop api || true && docker rm api || true'
                 sh 'docker run -dp 8081:8081 --name api ecommerce-api'
             }   
         }
