@@ -9,9 +9,11 @@ pipeline {
         }
 
         stage("SetUp"){
-            sh 'docker stop api'
-            sh 'docker rm api'
-            sh 'docker run -dp 8081:8081 --name api ecommerce-api'   
+            steps{
+                sh 'docker stop api'
+                sh 'docker rm api'
+                sh 'docker run -dp 8081:8081 --name api ecommerce-api'
+            }   
         }
     }
 }
