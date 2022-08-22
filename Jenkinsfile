@@ -3,10 +3,8 @@ pipeline {
     stages {
         stage("Test") {
             steps {
-                echo "Jenkins Tutorial"
-                echo("Jenkins Tutorial")
-                echo message: "Jenkins Tutorial"
-                echo(message: "Jenkins Tutorial")
+                sh 'ls'
+                sh 'docker ps'
             }
         }
     }
